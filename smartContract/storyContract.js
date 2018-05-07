@@ -1,6 +1,6 @@
 "use strict";
 
-var Message = function(text) {
+var Story = function(text) {
 	if (text) {
         var obj = JSON.parse(text);
         this.index = obj.index;
@@ -19,19 +19,19 @@ var Message = function(text) {
 	}
 };
 
-Message.prototype = {
+Story.prototype = {
 	toString: function () {
 		return JSON.stringify(this);
 	}
 };
 
-var MessagesContract = function () {
+var StoryContract = function () {
     LocalContractStorage.defineProperty(this, "messageCount");
     LocalContractStorage.defineMapProperty(this, "userMessages");
     LocalContractStorage.defineMapProperty(this, "dailyMessages");
     LocalContractStorage.defineMapProperty(this, "messages", {
         parse: function (text) {
-            return new Message(text);
+            return new Story(text);
         },
         stringify: function (o) {
             return o.toString();
@@ -41,7 +41,7 @@ var MessagesContract = function () {
 
 //-----
 
-MessagesContract.prototype = {
+StoryContract.prototype = {
     init: function () {
         this.messageCount = 0;
     },
@@ -56,7 +56,7 @@ MessagesContract.prototype = {
         var price = Blockchain.transaction.value;
         let messageCount = this.count();
 
-        var message = new Message();
+        var message = new Story();
         message.author = author;
         message.price = price;
         message.content = content;
@@ -129,4 +129,4 @@ MessagesContract.prototype = {
 
 
 
-module.exports = MessagesContract;
+module.exports = StoryContract;
