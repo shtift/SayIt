@@ -1,6 +1,6 @@
 'use strict';
 
-const dappAddress = "n1sJ6aA75RfnRgDP4fturrRDCPF2hkk24Pw";
+const dappAddress = "n1yx2oKWmQAa7Jxyvu8Y4HHW9gVCnPYycVH";
 let NebPay = require("nebpay"); 
 let nebPay = new NebPay();
 
@@ -60,7 +60,7 @@ function addMessagesToContainer(messages) {
     clearMessageContainer();
     if(!messages || messages.length == 0) {
         let container = document.querySelector(".messages-container");
-        container.innerHTML = "<div>No stories</div>";
+        container.innerHTML = '<div class="no-stories">There is no stories yet. Be first!</div>';
     }
 
     for(let msg of messages) {
