@@ -1,0 +1,14 @@
+– count()
+Return count of stories.
+
+– getByDate(unixStampDate)
+Returns stories created on the specified date. Parameter "unixStampDate" must contain a date without time in UnixTime format.
+
+– getByAuthor(author)
+Returns stories created by the specified author.
+
+– get(limit, offset)
+Returns a specified number of stories with the specified offset.
+
+– save(storyText, unixStamp, unixStampDate) 
+Saves user story. Parameter "unixStamp" must contain the full time of creating a history in UnixTime format. Parameter "unixStampDate" must contain a date without time in UnixTime format.

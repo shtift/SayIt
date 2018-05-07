@@ -1,0 +1,2 @@
+The application gives the user the ability to share a story and view the stories of other users. When a user sends a story, he can specify the cost of the payment. Depending on the amount of payment, the history gets a color label. Thus, history stands out and gets more attention. Also, depending on the amount of payment, generated a daily, weekly, monthly top.
+
